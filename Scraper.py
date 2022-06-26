@@ -13,6 +13,8 @@ class Scraper :
 
         options = Options()
         options.headless = True
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
         self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=options)
         self.driver.maximize_window()
 
